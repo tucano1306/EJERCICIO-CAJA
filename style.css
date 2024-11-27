@@ -1,17 +1,15 @@
-/* Parent container */
+
 .container {
     width: 500px;
     height: 500px;
     border: 2px dashed black;
 }
 
-/* Common styles for all child boxes */
 .box {
     padding: 10px;
     display: inline-block;
 }
 
-/* Box 1 styles */
 .box-1 {
     width: 230px;
     height: 210px;
@@ -20,7 +18,7 @@
     border-bottom: 10px solid grey;
 }
 
-/* Box 2 styles */
+
 .box-2 {
     width: 230px;
     height: 210px;
@@ -29,7 +27,6 @@
     border-bottom: 10px solid grey;
 }
 
-/* Box 3 styles */
 .box-3 {
     width: 210px;
     height: 230px;
@@ -38,7 +35,7 @@
     border-right: 10px solid cyan;
 }
 
-/* Box 4 styles */
+
 .box-4 {
     width: 210px;
     height: 230px;
@@ -47,7 +44,7 @@
     border-right: 10px solid cyan;
 }
 
-/* Remove whitespace between inline-block elements */
+
 .container {
     font-size: 0;
     line-height: 0;
