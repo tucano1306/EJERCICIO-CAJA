@@ -1,56 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
+<div style="padding: 20px;">
+    <h1>Análisis del Ejercicio de Modelo de Caja CSS</h1>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ejercicios CSS - Modelo-de-caja</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <div class="box box-1"></div>
-        <div class="box box-2"></div>
-        <div class="box box-3"></div>
-        <div class="box box-4"></div>
-    </div>
-</body>
+    <section>
+        <h2>HTML Base</h2>
+        <pre style="background-color: #f5f5f5; padding: 15px; border-radius: 5px;">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;Ejercicios CSS - Modelo-de-caja&lt;/title&gt;
+        &lt;link rel="stylesheet" href="style.css"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class="container"&gt;
+            &lt;div class="box box-1"&gt;&lt;/div&gt;
+            &lt;div class="box box-2"&gt;&lt;/div&gt;
+            &lt;div class="box box-3"&gt;&lt;/div&gt;
+            &lt;div class="box box-4"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+    </section>
 
-</html>
+    <section>
+        <h2>Explicación Detallada</h2>
+        
+        <h3>1. Dimensiones de la Caja Padre</h3>
+        <ul>
+            <li>Dimensiones interiores: 500px × 500px</li>
+            <li>Borde: 2px en cada lado</li>
+            <li>Dimensiones totales: 504px × 504px</li>
+        </ul>
 
-/EXPLICO
+        <h3>2. División del Espacio</h3>
+        <ul>
+            <li>Espacio horizontal por caja: 500px ÷ 2 = 250px</li>
+            <li>Espacio vertical por caja: 500px ÷ 2 = 250px</li>
+        </ul>
 
-Caja padre: 500px × 500px (interior)
-Borde de la caja padre: 2px en cada lado (por eso llega a 504px × 504px)
+        <h3>3. Cajas 1 y 2 (Superior e Inferior)</h3>
+        <div style="margin-left: 20px;">
+            <h4>Características:</h4>
+            <ul>
+                <li>Padding: 10px en cada lado (total 20px)</li>
+                <li>Bordes: 10px superior e inferior (total 20px)</li>
+            </ul>
+            
+            <h4>Cálculos:</h4>
+            <ul>
+                <li>Ancho = 250px - 20px (padding) = 230px</li>
+                <li>Alto = 250px - 20px (padding) - 20px (bordes) = 210px</li>
+            </ul>
+        </div>
+
+        <h3>4. Cajas 3 y 4 (Laterales)</h3>
+        <div style="margin-left: 20px;">
+            <h4>Características:</h4>
+            <ul>
+                <li>Padding: 10px en cada lado (total 20px)</li>
+                <li>Bordes: 10px laterales (total 20px)</li>
+            </ul>
+            
+            <h4>Cálculos:</h4>
+            <ul>
+                <li>Ancho = 250px - 20px (padding) - 20px (bordes) = 210px</li>
+                <li>Alto = 250px - 20px (padding) = 230px</li>
+            </ul>
+        </div>
+
+        <h3>5. Conclusiones Importantes</h3>
+        <ul>
+            <li>Cada caja ocupa exactamente 250px × 250px de espacio total</li>
+            <li>El padding y los bordes se restan del tamaño de la caja</li>
+            <li>Las cajas 1 y 2 requieren ajuste en altura por bordes superior/inferior</li>
+            <li>Las cajas 3 y 4 requieren ajuste en ancho por bordes laterales</li>
+            <li>El área total es igual (250px × 250px) aunque las dimensiones internas varíen</li>
+        </ul>
+    </section>
+</div>
+Last edited 3 minutes ago
 
 
-Como necesitamos 4 cajas que ocupen el mismo espacio:
-
-El espacio horizontal disponible es 500px ÷ 2 = 250px por caja en ancho
-El espacio vertical disponible es 500px ÷ 2 = 250px por caja en alto
-
--Para las cajas 1 y 2:
-
-Tienen padding de 10px en cada lado = 20px total de padding
-Tienen bordes superior e inferior de 10px = 20px total de bordes
-Por lo tanto:
-
-Ancho: 250px - 20px (padding) = 230px
-Alto: 250px - 20px (padding) - 20px (bordes) = 210px
-
--Para las cajas 3 y 4:
-
-Tienen padding de 10px en cada lado = 20px total de padding
-Tienen bordes laterales de 10px = 20px total de bordes
-Por lo tanto:
-
-Ancho: 250px - 20px (padding) - 20px (bordes) = 210px
-Alto: 250px - 20px (padding) = 230px
-
--Cada caja debe ocupar exactamente 250px × 250px de espacio total
-Debemos restar el padding y los bordes del tamaño de la caja para que el tamaño final sea exacto
-Las cajas 1 y 2 tienen bordes arriba y abajo, por lo que necesitan ajuste en la altura
-Las cajas 3 y 4 tienen bordes a los lados, por lo que necesitan ajuste en el ancho
-
-Al final, todas las cajas ocuparán exactamente la misma área total (250px × 250px), aunque sus dimensiones internas sean diferentes debido a la posición de sus bordes.
